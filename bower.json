@@ -11,8 +11,9 @@
     "output"
   ],
   "dependencies": {
-    "purescript-console": "^2.0.0",
-    "purescript-halogen": "^0.12.0",
-    "purescript-random": "^2.0.0"
-  }
+    "purescript-console": "2.0.0",
+    "purescript-halogen": "0.12.0",
+    "purescript-random": "2.0.0",
+    "purescript-psci-support": "2.0.0"
+  },
 }
