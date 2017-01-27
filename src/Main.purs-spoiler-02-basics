@@ -4,7 +4,7 @@ where
 import Control.Monad.Eff
 import Control.Monad.Eff.Console
 import Data.Array
-import Prelude
+import Prelude                      (class Show, Unit, bind, show, (*), (+), (<<<), (<>))
 
 
 -- expressions, names, types
@@ -78,6 +78,9 @@ testCalc = calc
 
 
 -- taking a look
+
+print :: forall eff a. (Show a) => a -> Eff ( console :: CONSOLE | eff ) Unit
+print = log <<< show
 
 main :: forall eff. Eff ( console :: CONSOLE | eff ) Unit
 main = do
