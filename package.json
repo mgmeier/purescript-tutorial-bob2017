@@ -1,0 +1,32 @@
+{
+    "name": "purescript-tutorial-bob2017",
+    "version": "0.1.0",
+    "description": "Purescript tutotial @ BOBKonf 2017",
+    "readme": "see README.md",
+    "keywords": [
+    ],
+    "license": "AGPL",
+    "author": {
+        "name": "Michael Karg",
+        "email": "mgoremeier@gmail.com"
+    },
+
+    "homepage": "https://github.com/mgmeier/purescript-tutorial-bob2017",
+    "bugs": {
+        "url": "https://github.com/mgmeier/purescript-tutorial-bob2017/issues",
+        "email": "mgoremeier@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mgmeier/purescript-tutorial-bob2017.git"
+    },
+
+    "dependencies": {
+        "virtual-dom": "*"
+    },
+    "devDependencies": {
+        "bower": "1.8.0",
+        "connect": "*",
+        "serve-static": "*"
+    }
+}

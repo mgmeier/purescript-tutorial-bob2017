@@ -1,0 +1,94 @@
+module Main
+where
+
+import Control.Monad.Eff
+import Control.Monad.Eff.Console
+import Data.Array
+import Prelude
+
+
+-- expressions, names, types
+
+someTarget :: String
+someTarget = "world"
+
+pi :: Number
+pi = 3.14159
+
+
+-- functions
+
+greet :: String -> String
+greet target = "hi " <> target
+
+enumerate :: Int -> Array Int
+enumerate 1000 = []
+enumerate i = i : enumerate (i + 1)
+
+naturals :: Array Int
+naturals = enumerate 1
+
+
+-- rows, type synonyms
+
+type Resource = { content_type :: String
+                , path :: String
+                }
+
+resourceLink :: Resource
+resourceLink = { content_type: "text/html;charset=utf8"
+               , path: "index.html"
+               }
+
+setPath :: forall extra.
+       String
+    -> { path :: String | extra }
+    -> { path :: String | extra }
+setPath new link = link { path = new }
+
+
+-- algebraic data types, pattern matching
+
+data MyBool = MyTrue | MyFalse
+
+myBoolToCBool :: MyBool -> Int
+myBoolToCBool MyTrue  = 0
+myBoolToCBool MyFalse = 1
+
+myIf :: forall t. MyBool -> t -> t -> t
+myIf MyTrue  thn _   = thn
+myIf MyFalse _   els = els
+
+data Expr =
+      Add Expr Expr
+    | Mul Expr Expr
+    | Num Int
+
+calc :: Expr -> Int
+calc (Add a b) = calc a + calc b
+calc (Mul a b) = calc a * calc b
+calc (Num a)   = a
+
+testCalc :: Int
+testCalc = calc
+    ( Add
+        ( Mul (Num 3) (Add (Num 1) (Num 2)) )
+        ( Num 19 )
+    )
+
+
+-- taking a look
+
+main :: forall eff. Eff ( console :: CONSOLE | eff ) Unit
+main = do
+    print (greet someTarget)
+    print pi
+    print naturals
+    print resourceLink.content_type
+    print resourceLink.path
+    let resourceLinkNew = setPath "new_index.html" resourceLink
+    print resourceLinkNew.path
+    print (myBoolToCBool MyTrue)
+    print (myIf MyTrue "yes" "no")
+    print (myIf MyFalse "yes" "no")
+    print testCalc
