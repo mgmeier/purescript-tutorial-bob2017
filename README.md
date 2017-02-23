@@ -33,7 +33,7 @@ npm install
 bower install
 node static/server.js
 ```
-- point your browser to where we will be working: http://localhost:8080/
+- point your browser to where we will be working: http://localhost:8080
 
 You should see a green page with the text `[nothing happening yet]`.
 
@@ -49,3 +49,21 @@ under `./examples` (Purescript; JavaScript) and `./static` (HTML, CSS). You will
 
 If you run into any trouble, at any time at all now or during the
 workshop, please open a github issue.
+
+### Halogen examples
+
+To walk through sample Web Apps with Halogen, we'll use the examples
+provided by Halogen itself. To build them locally, the commands are as follows:
+
+```shell
+git clone https://github.com/slamdata/purescript-halogen
+cd purescript-halogen
+git checkout tags/v0.12.0
+npm install
+npm run example-<example_name>
+```
+
+### Resources
+
+- Pursuit - Purescript API documentation search: https://pursuit.purescript.org
+˘
