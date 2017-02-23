@@ -17,9 +17,9 @@ import Halogen.Util (appendToBody, onLoad)
 import Prelude
 import Prim
 
-import qualified Halogen.HTML.Events.Indexed as E
-import qualified Halogen.HTML.Indexed as H
-import qualified Halogen.HTML.Properties.Indexed as P
+import Halogen.HTML.Events.Indexed as E
+import Halogen.HTML.Indexed as H
+import Halogen.HTML.Properties.Indexed as P
 
 
 -- app state

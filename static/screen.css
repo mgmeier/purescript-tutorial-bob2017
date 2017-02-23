@@ -1,0 +1,10 @@
+body {
+    background: lightgreen
+}
+
+.value {
+    background: yellow;
+    margin: 24px;
+    padding: 12px;
+    border-style: dashed dashed dashed;
+}

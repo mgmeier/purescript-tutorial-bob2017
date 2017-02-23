@@ -11,19 +11,22 @@ steps.  I'll be using Mac OS X for the tutorial, but you should
 be able to adapt everything to your setup, as long as it supports
 JavaScript hacking. If in doubt, open an issue here.
 
-- Node.js: install from https://nodejs.org/en/  (version 6.9.4 LTS should be fine)
+- Node.js: install from https://nodejs.org/en/  (version 6.10.0 LTS should be fine)
 - Purescript: download your pick from https://github.com/purescript/purescript/releases/tag/v0.10.5 and follow README instructions
-- Build system / dependency management:
-
+- Pulp build system
+```shell
+npm install -g pulp@10.0.0
+```
+- Bower package / dependency management:
+```shell
+npm install -g bower@1.8.0
+```
 - get this git repo:
 ```shell
 git clone https://github.com/mgmeier/purescript-tutorial-bob2017
 cd purescript-tutorial-bob2017
 ```
-- make sure that `./node_modules/.bin` is in your path:
-```shell
-export PATH=$PATH:`pwd`/node_modules/.bin
-```
+
 - install dependencies and start the static content server:
 ```shell
 npm install
@@ -34,14 +37,14 @@ node static/server.js
 
 You should see a green page with the text `[nothing happening yet]`.
 
-If you look at the browser console (Ctrl+Shift+i), you will find that
-`/bob16.js` can't be loaded yet.  We will build this in the tutorial.
+On opening your browser's console, you will find that
+`/bob17.js` can't be loaded yet.  We will build this in the tutorial.
 
 The code we will look at in the tutorial will be made available here
-under `./src` (purescript) and `./static` (html, css).  You will need
+under `./examples` (Purescript; JavaScript) and `./static` (HTML, CSS). You will need
 
-1. an editor to handle this code,
-1. a terminal to run the compiler and receive the compiler errors, and
+1. an editor of your choice to handle this code,
+1. a terminal to run the compiler and receive warnings and errors
 1. a browser to run the result.
 
 If you run into any trouble, at any time at all now or during the
