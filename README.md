@@ -1,26 +1,24 @@
-# BOB'16: purescript tutorial
+# BOB'17: Purescript tutorial
 
-This is the material for the BOB'16 purescript tutorial.  The code we
+This is the material for the BOB'17 Purescript tutorial. The code we
 are going to work on will be added soon.
 
 
-### get prepared
+### Get prepared
 
 Before you come to the workshop, please go through the following
-steps.  I am using debian linux for the demonstration, but you should
-be able to adapt everything to you setup, as long as it supports
-javascript hacking.  If in doubt, open an issue here.
+steps.  I'll be using Mac OS X for the tutorial, but you should
+be able to adapt everything to your setup, as long as it supports
+JavaScript hacking. If in doubt, open an issue here.
 
-- install `node` from https://nodejs.org/  (you need version 4.1 or higher)
-- install `npm` from https://npmjs.com/  (unless it is contained in your node distribution)
-- work around https://github.com/npm/npm/issues/11283:
-```shell
-npm set progress=false
-```
+- Node.js: install from https://nodejs.org/en/  (version 6.9.4 LTS should be fine)
+- Purescript: download your pick from https://github.com/purescript/purescript/releases/tag/v0.10.5 and follow README instructions
+- Build system / dependency management:
+
 - get this git repo:
 ```shell
-git clone https://github.com/fisx/bob16-psc
-cd bob16-psc
+git clone https://github.com/mgmeier/purescript-tutorial-bob2017
+cd purescript-tutorial-bob2017
 ```
 - make sure that `./node_modules/.bin` is in your path:
 ```shell
@@ -48,51 +46,3 @@ under `./src` (purescript) and `./static` (html, css).  You will need
 
 If you run into any trouble, at any time at all now or during the
 workshop, please open a github issue.
-
-
-
-### survey [optional, partial completion ok]
-
-If you want to help me figure out where to start, please fill out the
-following survey and email it to matthias@well-typed.com.
-
-```json
-{ "javascript":
-  { "lines_of_code_written":
-    { "more_than_10": null
-    , "more_than_1000": null
-    , "author_of_code_that_is_in_production": null
-    }
-  }
-, "haskell":
-  { "lines_of_code_written":
-    { "more_than_10": null
-    , "more_than_1000": null
-    , "author_of_code_that_is_in_production": null
-    }
-  }
-, "other_programming_languages": null
-, "my_professional_role": null
-}
-```
-
-example:
-```json
-{ "javascript":
-  { "lines_of_code_written":
-    { "more_than_10": false
-    , "more_than_1000": true
-    , "author_of_code_that_is_in_production": false
-    }
-  }
-, "haskell":
-  { "lines_of_code_written":
-    { "more_than_10": false
-    , "more_than_1000": false
-    , "author_of_code_that_is_in_production": false
-    }
-  }
-, "other_programming_languages": ["C", "Java", "Idris"]
-, "my_professional_role": ["student", "controller", "developer", "product owner"]
-}
-```
