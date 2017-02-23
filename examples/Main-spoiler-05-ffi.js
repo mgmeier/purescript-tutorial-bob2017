@@ -9,15 +9,17 @@ var greetInJs = function(target) {
 
 var loadResource = function(link) {
     return (function() {
-        link.content_type = "overwrite";  // write access
-        console.log(link);                // read access
+        console.log("loading resource: " + JSON.stringify(link));   // read access
+        link.content_type = "overwrite!!!";                         // write access, we're inside an effect!
     });
 };
 
 var loadResourceAsync = function(link) {
-    return function(callback) {
+    return function(callback) {             // our callback is defined in purescript
         return (function() {
-            callback(3)();
+            // we load the resource from link, and then call the purescript continuation
+            // let's assume the answer is 42
+            callback(42)();
         });
     }
 }
